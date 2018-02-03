@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		7E61EC5420252D35003BBD2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61EC5320252D35003BBD2C /* AppDelegate.swift */; };
-		7E61EC5620252D35003BBD2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61EC5520252D35003BBD2C /* ViewController.swift */; };
+		7E61EC5620252D35003BBD2C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61EC5520252D35003BBD2C /* MainViewController.swift */; };
 		7E61EC5920252D35003BBD2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E61EC5720252D35003BBD2C /* Main.storyboard */; };
 		7E61EC5B20252D35003BBD2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E61EC5A20252D35003BBD2C /* Assets.xcassets */; };
 		7E61EC5E20252D35003BBD2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E61EC5C20252D35003BBD2C /* LaunchScreen.storyboard */; };
+		7E61EC6620253166003BBD2C /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61EC6520253166003BBD2C /* RecommendationViewController.swift */; };
+		7E61EC68202534A5003BBD2C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61EC67202534A5003BBD2C /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7E61EC5020252D35003BBD2C /* Munchies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Munchies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E61EC5320252D35003BBD2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7E61EC5520252D35003BBD2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7E61EC5520252D35003BBD2C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7E61EC5820252D35003BBD2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E61EC5A20252D35003BBD2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E61EC5D20252D35003BBD2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E61EC5F20252D35003BBD2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E61EC6520253166003BBD2C /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
+		7E61EC67202534A5003BBD2C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				7E61EC5320252D35003BBD2C /* AppDelegate.swift */,
-				7E61EC5520252D35003BBD2C /* ViewController.swift */,
+				7E61EC5520252D35003BBD2C /* MainViewController.swift */,
 				7E61EC5720252D35003BBD2C /* Main.storyboard */,
 				7E61EC5A20252D35003BBD2C /* Assets.xcassets */,
 				7E61EC5C20252D35003BBD2C /* LaunchScreen.storyboard */,
 				7E61EC5F20252D35003BBD2C /* Info.plist */,
+				7E61EC6520253166003BBD2C /* RecommendationViewController.swift */,
+				7E61EC67202534A5003BBD2C /* UIViewExtension.swift */,
 			);
 			path = Munchies;
 			sourceTree = "<group>";
@@ -136,7 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E61EC5620252D35003BBD2C /* ViewController.swift in Sources */,
+				7E61EC6620253166003BBD2C /* RecommendationViewController.swift in Sources */,
+				7E61EC5620252D35003BBD2C /* MainViewController.swift in Sources */,
+				7E61EC68202534A5003BBD2C /* UIViewExtension.swift in Sources */,
 				7E61EC5420252D35003BBD2C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
