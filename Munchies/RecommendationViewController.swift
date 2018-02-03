@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import Alamofire
+import AlamofireImage
 
 class RecommendationViewController: UIViewController {
 
@@ -20,27 +22,45 @@ class RecommendationViewController: UIViewController {
     @IBOutlet weak var placePrice: UILabel!
     @IBOutlet weak var placeRating: UILabel!
     
-    var recommendationManager = RecommendationManager()
+    var recommendationManager = RecommendationManager(location: CLLocationCoordinate2DMake(32.733338, -97.111425))
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        generateMapSnapshot()
         recommendationManager.getRecommendation { recommendation, error in
             if let r = recommendation {
-                self.placeTitle.text = r.name
-                self.placeCategory.text = r.category
-                self.placePrice.text = r.price
-                self.placeRating.text = String(r.rating)
+                self.updateMainImage(recommendation: r)
+                self.updateLabels(recommendation: r)
+                self.generateMapSnapshot(recommendation: r)
             }
         }
     }
     
-    func generateMapSnapshot() {
+    func updateLabels(recommendation r: Recommendation) {
+        self.placeTitle.text = r.name
+        self.placeCategory.text = r.category
+        self.placePrice.text = r.price
+        self.placeRating.text = String(r.rating)
+    }
+    
+    func updateMainImage(recommendation r: Recommendation) {
+        guard let url = r.imageUrl else {
+            return
+        }
+        
+        // Request image
+        Alamofire.request(url).responseImage { response in
+            if let image = response.result.value {
+                self.mainImage.image = image
+            }
+        }
+    }
+    
+    func generateMapSnapshot(recommendation: Recommendation) {
         let mapSnapshotOptions = MKMapSnapshotOptions()
 
         // Bounds
-        var coordinates = [CLLocationCoordinate2DMake(32.733338, -97.111425)]
+        var coordinates = [recommendation.location]
         let polyLine = MKPolyline(coordinates: &coordinates, count: coordinates.count)
         let region = MKCoordinateRegionForMapRect(polyLine.boundingMapRect)
 
