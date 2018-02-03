@@ -12,11 +12,28 @@ import MapKit
 class RecommendationViewController: UIViewController {
 
     @IBOutlet weak var mapSnapshot: UIImageView!
-
+    @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var placeTitle: UILabel!
+    @IBOutlet weak var placeCategory: UILabel!
+    @IBOutlet weak var placeDistance: UILabel!
+    @IBOutlet weak var placeHours: UILabel!
+    @IBOutlet weak var placePrice: UILabel!
+    @IBOutlet weak var placeRating: UILabel!
+    
+    var recommendationManager = RecommendationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         generateMapSnapshot()
+        recommendationManager.getRecommendation { recommendation, error in
+            if let r = recommendation {
+                self.placeTitle.text = r.name
+                self.placeCategory.text = r.category
+                self.placePrice.text = r.price
+                self.placeRating.text = String(r.rating)
+            }
+        }
     }
     
     func generateMapSnapshot() {

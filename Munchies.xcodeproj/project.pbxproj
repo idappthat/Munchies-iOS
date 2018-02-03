@@ -14,6 +14,8 @@
 		7E61EC5E20252D35003BBD2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E61EC5C20252D35003BBD2C /* LaunchScreen.storyboard */; };
 		7E61EC6620253166003BBD2C /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61EC6520253166003BBD2C /* RecommendationViewController.swift */; };
 		7E61EC68202534A5003BBD2C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61EC67202534A5003BBD2C /* UIViewExtension.swift */; };
+		7E61EC6A20253BCA003BBD2C /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61EC6920253BCA003BBD2C /* Recommendation.swift */; };
+		7E61EC6D20254075003BBD2C /* RecommendationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61EC6C20254075003BBD2C /* RecommendationManager.swift */; };
 		AF33677AA3AFB698BBB62E1A /* Pods_Munchies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392582CEE4F239FC7E2AB762 /* Pods_Munchies.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		7E61EC5F20252D35003BBD2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E61EC6520253166003BBD2C /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		7E61EC67202534A5003BBD2C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		7E61EC6920253BCA003BBD2C /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
+		7E61EC6C20254075003BBD2C /* RecommendationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationManager.swift; sourceTree = "<group>"; };
 		F4E9A276F490FFE548FF890D /* Pods-Munchies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munchies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Munchies/Pods-Munchies.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +94,8 @@
 				7E61EC5F20252D35003BBD2C /* Info.plist */,
 				7E61EC6520253166003BBD2C /* RecommendationViewController.swift */,
 				7E61EC67202534A5003BBD2C /* UIViewExtension.swift */,
+				7E61EC6920253BCA003BBD2C /* Recommendation.swift */,
+				7E61EC6C20254075003BBD2C /* RecommendationManager.swift */,
 			);
 			path = Munchies;
 			sourceTree = "<group>";
@@ -229,6 +235,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E61EC6D20254075003BBD2C /* RecommendationManager.swift in Sources */,
+				7E61EC6A20253BCA003BBD2C /* Recommendation.swift in Sources */,
 				7E61EC6620253166003BBD2C /* RecommendationViewController.swift in Sources */,
 				7E61EC5620252D35003BBD2C /* MainViewController.swift in Sources */,
 				7E61EC68202534A5003BBD2C /* UIViewExtension.swift in Sources */,
