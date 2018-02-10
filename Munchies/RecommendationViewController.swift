@@ -14,6 +14,12 @@ import Cosmos
 
 class RecommendationViewController: UIViewController {
 
+    @IBAction func yesPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func noPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBOutlet weak var mapSnapshot: UIImageView!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var placeTitle: UILabel!
