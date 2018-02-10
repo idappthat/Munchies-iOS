@@ -12,7 +12,7 @@ import MapKit
 class Recommendation {
     var id: String
     var name: String
-    var rating: Int
+    var rating: Double
     var price: String
     var category: String?
     var location: CLLocationCoordinate2D
@@ -20,9 +20,10 @@ class Recommendation {
     
     
     init(json: JSON) {
+        print(json)
         self.id = json["id"].stringValue
         self.name = json["name"].stringValue
-        self.rating = json["rating"].intValue
+        self.rating = json["rating"].doubleValue
         self.price = json["price"].stringValue
         
         // Category

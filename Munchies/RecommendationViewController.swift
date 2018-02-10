@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import Alamofire
 import AlamofireImage
+import Cosmos
 
 class RecommendationViewController: UIViewController {
 
@@ -20,7 +21,7 @@ class RecommendationViewController: UIViewController {
     @IBOutlet weak var placeDistance: UILabel!
     @IBOutlet weak var placeHours: UILabel!
     @IBOutlet weak var placePrice: UILabel!
-    @IBOutlet weak var placeRating: UILabel!
+    @IBOutlet weak var placeRating: CosmosView!
     
     var recommendationManager = RecommendationManager(location: CLLocationCoordinate2DMake(32.733338, -97.111425))
     
@@ -40,7 +41,7 @@ class RecommendationViewController: UIViewController {
         self.placeTitle.text = r.name
         self.placeCategory.text = r.category
         self.placePrice.text = r.price
-        self.placeRating.text = String(r.rating)
+        self.placeRating.rating = r.rating
     }
     
     func updateMainImage(recommendation r: Recommendation) {
@@ -79,5 +80,9 @@ class RecommendationViewController: UIViewController {
             }
             self.mapSnapshot.image = snapshot.image
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

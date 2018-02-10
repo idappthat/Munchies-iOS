@@ -6,4 +6,5 @@ target 'Munchies' do
   pod 'AlamofireImage'
   pod 'SwiftyJSON'
   pod 'lottie-ios'
+  pod 'Cosmos'
 end
