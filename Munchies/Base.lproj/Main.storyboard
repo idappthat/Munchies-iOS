@@ -79,8 +79,9 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X7y-7T-O1a">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X7y-7T-O1a">
                                         <rect key="frame" x="8" y="472" width="304" height="125"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="125" id="ymr-Ez-RkM"/>
                                         </constraints>
@@ -89,6 +90,9 @@
                                                 <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="XCZ-74-Wjt" appends="YES" id="E3d-oL-gEe"/>
+                                        </connections>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="ohS-4j-Pu2">
                                         <rect key="frame" x="8" y="374" width="22" height="22"/>
@@ -246,65 +250,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6r-5u-eB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="XCZ-74-Wjt">
+                    <connections>
+                        <action selector="directionsPressed:" destination="boY-MV-EGN" id="wtk-h8-rgm"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1051.875" y="108.80281690140845"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="hfk-9S-oUv">
-            <objects>
-                <viewController id="vxN-fO-kYQ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="T1v-hm-Lfc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XK7-PB-vbh">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXQ-E5-5HD">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLa-et-5xW">
-                                                <rect key="frame" x="137" y="950" width="46" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="bp6-3T-cU5"/>
-                                                    <constraint firstAttribute="width" constant="46" id="n2h-5V-Q0r"/>
-                                                    <constraint firstAttribute="height" constant="30" id="nui-Bf-T5Z"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="sur-Nz-47u"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="yLa-et-5xW" secondAttribute="bottom" constant="20" id="OGg-X6-uCi"/>
-                                            <constraint firstItem="yLa-et-5xW" firstAttribute="centerX" secondItem="LXQ-E5-5HD" secondAttribute="centerX" id="uJ0-nS-iMa"/>
-                                            <constraint firstItem="yLa-et-5xW" firstAttribute="top" secondItem="LXQ-E5-5HD" secondAttribute="top" constant="950" id="uQn-Gh-joO"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="LXQ-E5-5HD" secondAttribute="trailing" id="C45-iv-D5o"/>
-                                    <constraint firstItem="LXQ-E5-5HD" firstAttribute="top" secondItem="XK7-PB-vbh" secondAttribute="top" id="Dl2-77-XkJ"/>
-                                    <constraint firstItem="LXQ-E5-5HD" firstAttribute="leading" secondItem="XK7-PB-vbh" secondAttribute="leading" id="K2t-vD-X7s"/>
-                                    <constraint firstAttribute="bottom" secondItem="LXQ-E5-5HD" secondAttribute="bottom" id="qha-OX-Car"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="XK7-PB-vbh" firstAttribute="trailing" secondItem="FpK-r6-VYn" secondAttribute="trailing" id="0zF-dt-TGU"/>
-                            <constraint firstItem="XK7-PB-vbh" firstAttribute="leading" secondItem="FpK-r6-VYn" secondAttribute="leading" id="RhB-NR-JqQ"/>
-                            <constraint firstItem="XK7-PB-vbh" firstAttribute="bottom" secondItem="FpK-r6-VYn" secondAttribute="bottom" id="clb-DX-pwu"/>
-                            <constraint firstItem="LXQ-E5-5HD" firstAttribute="width" secondItem="T1v-hm-Lfc" secondAttribute="width" id="hW0-xr-nyF"/>
-                            <constraint firstItem="XK7-PB-vbh" firstAttribute="top" secondItem="T1v-hm-Lfc" secondAttribute="top" id="wPY-Q0-Fcd"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="FpK-r6-VYn"/>
-                    </view>
-                    <size key="freeformSize" width="320" height="1000"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ung-HX-aYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1826.25" y="71.83098591549296"/>
+            <point key="canvasLocation" x="1232" y="90"/>
         </scene>
     </scenes>
     <resources>

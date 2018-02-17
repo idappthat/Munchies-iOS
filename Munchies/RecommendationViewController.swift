@@ -17,9 +17,15 @@ class RecommendationViewController: UIViewController {
     @IBAction func yesPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func noPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func directionsPressed(_ sender: UITapGestureRecognizer) {
+        self.openMapsToRecommendation()
+    }
+    
     @IBOutlet weak var mapSnapshot: UIImageView!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var placeTitle: UILabel!
@@ -38,6 +44,7 @@ class RecommendationViewController: UIViewController {
 
         recommendationManager.getRecommendation { recommendation, error in
             if let r = recommendation {
+                self.recommendation = r
                 self.updateMainImage(recommendation: r)
                 self.updateLabels(recommendation: r)
                 self.generateMapSnapshot(recommendation: r)
@@ -91,6 +98,16 @@ class RecommendationViewController: UIViewController {
         }
     }
     
+    // MARK: - Extra user actions
+    func openMapsToRecommendation() {
+        if let location = recommendation?.location {
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: location, addressDictionary:nil))
+            mapItem.name = recommendation?.name
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+        }
+    }
+    
+    // MARK: - View Config
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
