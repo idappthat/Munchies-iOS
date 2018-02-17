@@ -28,8 +28,10 @@ class RecommendationViewController: UIViewController {
     @IBOutlet weak var placeHours: UILabel!
     @IBOutlet weak var placePrice: UILabel!
     @IBOutlet weak var placeRating: CosmosView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var recommendationManager = RecommendationManager(location: CLLocationCoordinate2DMake(32.733338, -97.111425))
+    var recommendation: Recommendation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +50,7 @@ class RecommendationViewController: UIViewController {
         self.placeCategory.text = r.category
         self.placePrice.text = r.price
         self.placeRating.rating = r.rating
+        self.scrollView.layoutIfNeeded()
     }
     
     func updateMainImage(recommendation r: Recommendation) {
